@@ -38,6 +38,60 @@ zig build
 `zig-out\bin\` 디렉토리에 실행 파일이 만들어진다    
     
 	
+# 외부 라이브러리 사용하기   
+외부 라이브러리가 있는 위치를 build.zig 파일에 입력한다.  
+아래는 `pike` 라는 네트워크 라이브러리를 사용하는 예이다.  
+
+`pike` 라이브러리는 이 위치에 있다. `C:\pike_samples\libs\pike`      
+    
+`pike`를 사용하는 실행 파일 프로젝트를 만든다.  디렉토리는 `C:\pike_samples\tcp_client`  
+`build.zig`의 내용이다.  
+```
+const std = @import("std");
+
+pub fn build(b: *std.build.Builder) void {
+    const mode = b.standardReleaseOptions();
+
+    const exe = b.addExecutable("tcp_client", "src/main.zig");
+    exe.addPackagePath("table-helper", "../libs/pike/pike.zig"); //pike 디렉토리를 추가했다
+    exe.setTarget(target);
+    exe.setBuildMode(mode);
+    exe.install();
+
+    const run_cmd = exe.run();
+    run_cmd.step.dependOn(b.getInstallStep());
+    if (b.args) |args| {
+        run_cmd.addArgs(args);
+    }
+
+    const run_step = b.step("run", "Run the app");
+    run_step.dependOn(&run_cmd.step);
+
+    const exe_tests = b.addTest("src/main.zig");
+    exe_tests.setTarget(target);
+    exe_tests.setBuildMode(mode);
+
+    const test_step = b.step("test", "Run unit tests");
+    test_step.dependOn(&exe_tests.step);
+}
+```  
+  	
+`main.zig`  
+```
+const std = @import("std");
+const pike = @import("pike").Table;
+
+pub fn main() anyerror!void {
+    std.log.info("All your codebase are belong to us.", .{});
+}
+
+test "basic test" {
+    try std.testing.expectEqual(10, 3 + 7);
+}
+```	
+	
+<br>  	
+	
 # 학습
 - https://ziglearn.org/chapter-1/
 - https://ziglang.org/documentation/0.9.1/
