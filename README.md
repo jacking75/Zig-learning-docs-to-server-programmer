@@ -39,6 +39,9 @@ zig build
     
 	
 # 외부 라이브러리 사용하기   
+[이 문서](https://github.com/Sobeston/ziglearn/blob/master/chapter-3.md )를 참고했다.  
+참고로 위 문서에는 라이브러리 만들기와 사용하기를 설명하고 있다  
+  
 외부 라이브러리가 있는 위치를 build.zig 파일에 입력한다.  
 아래는 `pike` 라는 네트워크 라이브러리를 사용하는 예이다.  
 
