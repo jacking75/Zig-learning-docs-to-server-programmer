@@ -9,6 +9,35 @@
 - [(일어) Zig 언어의 문서를 보고 "과연" 이라고 생각한 부분](https://zenn.dev/tetsu_koba/articles/032d3a2f675f50 )
   
   
+# Hello World
+아래 명령어로 프로젝트를 만든다  
+`zig init-exe`  
+  
+아래와 같은 파일이 만들어진다  
+<pre>
+>tree
+│  build.zig
+│
+└─src
+       main.zig
+</pre>    
+      
+src/main.zig  
+```
+const std = @import("std");
+
+pub fn main() !void {
+    std.debug.print("Hello, {s}!\n", .{"World"});
+}	
+```
+  
+빌드하기    
+```
+zig build
+```      
+`zig-out\bin\` 디렉토리에 실행 파일이 만들어진다    
+    
+	
 # 학습
 - https://ziglearn.org/chapter-1/
 - https://ziglang.org/documentation/0.9.1/
