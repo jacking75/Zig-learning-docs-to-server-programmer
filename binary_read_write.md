@@ -1,7 +1,6 @@
 # 바이너리 데이터 다루기
 https://github.com/zigimg/zigimg/blob/master/src/formats/bmp.zig  
 https://github.com/zigimg/zigimg/blob/master/src/formats/jpeg.zig  
-https://ziglang.org/documentation/master/std/#root;io.Reader  https://ziglang.org/documentation/master/std/#root;io.Writer   
   
   
 ## 슬라이스에서 정수로 포인트 변환하기
@@ -11,9 +10,14 @@ https://ziglang.org/documentation/master/std/#root;io.Reader  https://ziglang.or
 ## memcpy로 복사하기
   
 
+## stream reader, writer
+https://ziglang.org/documentation/master/std/#root;io.Reader  https://ziglang.org/documentation/master/std/#root;io.Writer   
   
+  
+  
+    
 ## packed struct   
-보통의 구조체와는 달리 packed struct는 메모리 내의 레이아웃이 보증된다. フィールドは宣言された順番に並びます。
+보통의 구조체와는 달리 packed struct는 메모리 내의 레이아웃이 보증된다. 필드는 선언된 순서로 나열된다.
 - 필드 사이에 패딩이 없다
 - Zig은 임의의 폭을 가지는 정수를 지원하고 있으며, 보통 8비트 미만의 정수는 1바이트 메모리를 사용하지만 packed struct는 이 비트 폭을 정확하게 사용한다. 
 - enum 필드는 이 정수 태그 타입의 비트 폭을 그대로 사용한다.
