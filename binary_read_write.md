@@ -1,13 +1,7 @@
 # 바이너리 데이터 다루기
-https://github.com/zigimg/zigimg/blob/master/src/formats/bmp.zig  
-https://github.com/zigimg/zigimg/blob/master/src/formats/jpeg.zig  
   
   
-## 슬라이스에서 정수로 포인트 변환하기
-  
-  
-  
-## memcpy로 복사하기
+## memcpy, 
   
 
 ## stream reader, writer
@@ -15,8 +9,11 @@ https://ziglang.org/documentation/master/std/#root;io.Reader  https://ziglang.or
   
   
   
-    
-## packed struct   
+## 구조체 
+- 바이너리 데이터를 구조체로 읽는 예 [bmp](https://github.com/zigimg/zigimg/blob/master/src/formats/bmp.zig )   [jpeg](https://github.com/zigimg/zigimg/blob/master/src/formats/jpeg.zig )   
+  
+
+### packed struct   
 보통의 구조체와는 달리 packed struct는 메모리 내의 레이아웃이 보증된다. 필드는 선언된 순서로 나열된다.
 - 필드 사이에 패딩이 없다
 - Zig은 임의의 폭을 가지는 정수를 지원하고 있으며, 보통 8비트 미만의 정수는 1바이트 메모리를 사용하지만 packed struct는 이 비트 폭을 정확하게 사용한다. 
@@ -24,10 +21,9 @@ https://ziglang.org/documentation/master/std/#root;io.Reader  https://ziglang.or
 - packed union 필드는 최대 비트 폭을 가진 union 필드 비트 폭을 정확하게 사용한다
 - 비 ABI 얼라이먼트 필드는 타겟 엔디언에 따르고, 가능한 작은 API 얼라이먼트 정수에 pack 된다
   
-std.meta ?  
-  
-## 스트림 읽기
-https://github.com/zigimg/zigimg/blob/master/src/formats/bmp.zig    
+    
+### 스트림 읽기
+출처: https://github.com/zigimg/zigimg/blob/master/src/formats/bmp.zig    
 ```
 pub fn read(self: *Self, allocator: Allocator, stream: *Image.Stream, pixels_opt: *?color.PixelStorage) ImageReadError!void {
         // Read file header
@@ -43,17 +39,17 @@ pub fn read(self: *Self, allocator: Allocator, stream: *Image.Stream, pixels_opt
         try stream.seekTo(current_header_pos);
 ```    
   
-  
-## @field
-구조체의 멤버의 값을 읽을 수 있음)
-https://ziglang.org/documentation/master/#field  
+   
+### @field
+구조체의 멤버의 값을 읽을 수 있음  
+https://ziglang.org/documentation/master/#field    
 ```
 @field 
 @field(lhs: anytype, comptime field_name: []const u8) (field)
 ```
   
-  
-  
+std.meta를 사용하여 메타 프로그래밍 가능하다    
+https://ziglang.org/documentation/master/std/#root;meta  
 ```
 https://github.com/zigimg/zigimg/blob/master/src/utils.zig
 
@@ -84,4 +80,8 @@ fn checkEnumFields(data: anytype) StructReadError!void {
     }
 }
 ``` 
+    
+      
+
+
   
