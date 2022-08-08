@@ -1,13 +1,14 @@
 # 바이너리 데이터 다루기
   
   
-## memcpy, 
+## std.mem 
+    
   
-
 ## stream reader, writer
-https://ziglang.org/documentation/master/std/#root;io.Reader  https://ziglang.org/documentation/master/std/#root;io.Writer   
+https://ziglang.org/documentation/master/std/#root;io.Reader  
+https://ziglang.org/documentation/master/std/#root;io.Writer     
   
-  
+    
   
 ## 구조체 
 - 바이너리 데이터를 구조체로 읽는 예 [bmp](https://github.com/zigimg/zigimg/blob/master/src/formats/bmp.zig )   [jpeg](https://github.com/zigimg/zigimg/blob/master/src/formats/jpeg.zig )   
@@ -47,11 +48,11 @@ https://ziglang.org/documentation/master/#field
 @field 
 @field(lhs: anytype, comptime field_name: []const u8) (field)
 ```
-  
+   
 std.meta를 사용하여 메타 프로그래밍 가능하다    
-https://ziglang.org/documentation/master/std/#root;meta  
+https://ziglang.org/documentation/master/std/#root;meta   
 ```
-https://github.com/zigimg/zigimg/blob/master/src/utils.zig
+//https://github.com/zigimg/zigimg/blob/master/src/utils.zig
 
 pub const readStructLittle = switch (native_endian) {
     builtin.Endian.Little => readStructNative,

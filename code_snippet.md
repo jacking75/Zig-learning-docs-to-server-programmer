@@ -5,22 +5,59 @@
     
   
 ## 배열
-  
-### 특정 값으로 초기화
-```
-var arr1: [16]u8 = undefined;
-mem.set(u8, &arr1, 0);
-```
-
+    
 ### 배열 선언 시 초기화
 ```
 var buffer: [1000]u8 = undefined;
 
 const twelve = [_]u8{ 12, 0, 0, 0 };
+
+var array: [4]u8 = [_]u8{ 11, 22, 33, 44 };
+
+var array: [4]u8 = .{ 11, 22, 33, 44 }; 
+
+const all_zero = [_]u16{0} ** 10;
 ```  
   
+### 특정 값으로 채우기
+```
+mem.set(u8, &arr1, 0);
+```
   
+### 배열 복사
+```
+const array1 = [_]i32{ 3, 1, 4, 1, 5, 9, 2 };
+var array2: [array1.len]i32 = undefined;
+for (array1) |b, i| array2[i] = b;
+```  
   
+```
+const mem = @import("std").mem;
+const array1 = [_]i32{ 3, 1, 4, 1, 5, 9, 2 };
+var array2: [array1.len]i32 = undefined;
+
+mem.copy(i32, &array2, &array1);
+```     
+
+### 배열을 함수의 인자로 넘기기
+```
+const std = @import("std");
+const print = std.debug.print;
+
+fn printArray(array: []const i32) void {
+    for (array) |value| {
+        print("{}", .{value});
+    }
+}
+
+pub fn main() void {
+    const array = [_]i32{ 3, 1, 4, 1, 5, 9, 2 };
+    printArray(&array);
+}
+```  
+    
+
+
 ## 구조체 
   
 ### 멤버를 특정 값으로 초기화 하기
@@ -177,7 +214,22 @@ pub fn readStructForeign(reader: io.StreamSource.Reader, comptime T: type) Struc
     return result;
 }
 ```
+   
 
+
+## 난수(rand)
+  
+```
+const std = @import("std");
+const prng = std.rand.DefaultPrng;
+const time = std.time;
+const print = std.debug.print;
+
+pub fn main() void {
+    var rand = prng.init(@intCast(u64, time.milliTimestamp()));
+    print("{}\n", .{rand.random().int(u32)});
+}
+```
 
 
 
