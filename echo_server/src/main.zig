@@ -15,20 +15,35 @@ pub fn main() anyerror!void {
         var conn = server.accept() catch |err| { std.log.err("Fail accept: {}", .{err}); break; };
         std.log.info("new conn: {}", .{conn.address});
 
+        echo(&conn.stream);       
+    }
+    
+}
+
+fn echo(stream: *net.Stream) void {
+    while(true) {
         var buf: [2000]u8 = undefined;
-        var len = conn.stream.read(&buf) catch |err| { 
+
+        //var len = if (stream.read(&buf)) |n| n else |err| { 
+        //var len = stream.read(&buf) catch {     
+        var len = stream.read(&buf) catch |err| {         
             std.log.err("Fail read: {}", .{err}); 
-            conn.stream.close();
+            stream.close();
             break; 
         };
         std.log.info("read: {}", .{len});
 
-        _ = conn.stream.write(buf[0..len]) catch |err| {
+        if (len == 0) {
+            stream.close();
+            break; 
+        }
+        
+
+        _ = stream.write(buf[0..len]) catch |err| {
             std.log.err("Fail write: {}", .{err}); 
-            conn.stream.close();
+            stream.close();
         };
     }
-    
 }
 
 

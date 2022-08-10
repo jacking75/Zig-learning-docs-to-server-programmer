@@ -39,6 +39,12 @@ zig build
 `zig-out\bin\` 디렉토리에 실행 파일이 만들어진다    
     
 	
+# 릴리즈 모드 빌드 
+- `zig build -Drelease-fast'
+- `zig build -Drelease-safe`
+- `zig build -Drelease-small`
+  
+  
 # 외부 라이브러리 사용하기   
 [이 문서](https://github.com/Sobeston/ziglearn/blob/master/chapter-3.md )를 참고했다.  
 참고로 위 문서에는 라이브러리 만들기와 사용하기를 설명하고 있다  

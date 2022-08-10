@@ -1,10 +1,15 @@
 # 소켓 프로그래밍
-  
 - [std.net](https://ziglang.org/documentation/master/std/#root;net )
     - [StreamServer](https://ziglang.org/documentation/master/std/#root;net.StreamServer ) 
     - [Stream](https://ziglang.org/documentation/master/std/#root;net.Stream )
        
-
+- **디버그 버전으로 빌드된 경우 API에서 접속이 끊어졌을 때 등에서 스택트레이스를 출력한다. 이것은 릴리즈 버전으로 빌드하면 출력하지 않는다**
+- linux에서는 `epoll`, windows에서는 `iocp`를 사용하고 있다/
+    - windows는 소스 코드 중 `https://github.com/ziglang/zig/blob/master/lib/std/net.zig`의 `pub fn accept(self: *StreamServer) AcceptError!Connection`을 보면 비동기 사용 가능 여부에 따라서 다르게 동작한다.
+	- 비동기를 사용하는 경우 `https://github.com/ziglang/zig/blob/master/lib/std/event/loop.zig`에 보면 각 OS별로 최적의 API를 호출하고 있고, windows에서는 IOCP 함수를 사용하고 있다.  
+  
+  
+  
 # StreamServer
   
 ## Functions
