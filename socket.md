@@ -12,6 +12,9 @@
 - https://github.com/atsushi-kitazawa/zig-chat-server 
     - 채팅 서버가 완전 구현되지 않았고, 새로운 접속마다 스레드 생성
 - https://github.com/theCow61/zatio  
+    - async을 사용하고 있음  
+  
+
   
 # std.net 
   
