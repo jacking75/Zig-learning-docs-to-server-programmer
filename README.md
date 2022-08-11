@@ -6,6 +6,7 @@
     - [Zig Language Reference](https://ziglang.org/documentation/master/ ) [한국어](https://runebook.dev/ko/docs/zig/-index- )
     - [STD](https://ziglang.org/documentation/master/std/#root )
 - [Playground](https://zig-play.dev/ )
+- [GitHub](https://github.com/ziglang/zig )
 - [Zig 첫인상](https://velog.io/@maxtnuk/Zig-%EC%B2%AB%EC%9D%B8%EC%83%81 ) 
 - [(일어) Zig 언어의 문서를 보고 "과연" 이라고 생각한 부분](https://zenn.dev/tetsu_koba/articles/032d3a2f675f50 )
   
@@ -184,3 +185,4 @@ const d3: [*]const u8 = d + 1;
     
 ## 네트워크  
 - [pike](https://github.com/lithdew/pike ). 비동기 I/O 라이브러리    
+- [natsmq](https://github.com/nats-io/nats.zig )
