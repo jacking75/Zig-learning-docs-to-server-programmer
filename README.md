@@ -9,6 +9,7 @@
 - [GitHub](https://github.com/ziglang/zig )
 - [Zig 첫인상](https://velog.io/@maxtnuk/Zig-%EC%B2%AB%EC%9D%B8%EC%83%81 ) 
 - [(일어) Zig 언어의 문서를 보고 "과연" 이라고 생각한 부분](https://zenn.dev/tetsu_koba/articles/032d3a2f675f50 )
+- [JetBrains Plugin - Zig Support](https://plugins.jetbrains.com/plugin/18062-zig-support/versions )
   
   
 # Hello World
