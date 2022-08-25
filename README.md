@@ -12,6 +12,10 @@
 - [JetBrains Plugin - Zig Support](https://plugins.jetbrains.com/plugin/18062-zig-support/versions )
   
   
+# 설치
+- [Zig 언어를 Ubuntu(WSL2)에 설치](https://docs.google.com/document/d/e/2PACX-1vSK1VpNBg9P-I1Fvr0LuBlxKAuMtYeH0We7n-jAUqq4x9YDQhS3i0kSVE2O2T0bV01mLmCcZK5m74hX/pub ) 
+  
+
 # Hello World
 아래 명령어로 프로젝트를 만든다  
 `zig init-exe`  
@@ -156,6 +160,7 @@ const d3: [*]const u8 = d + 1;
 - [(일어) 대략적으로 Zig 소개](https://zenn.dev/hastur/articles/bacbe2af2c5807)
 - [(일어) 문법 정리](https://qiita.com/bellbind/items/f2338fa1d82a2a79f290 )
 - [(일어) Zig 언어의 산술연산자](https://zenn.dev/yohhoy/articles/zig-exotic-arithops )  
+- [(일어) Zig 표준 라이브러리에서 준비되어 있는 컬렉션 타입을 정리](https://zenn.dev/magurotuna/articles/zig-std-collections )
   
   
   
@@ -183,6 +188,7 @@ const d3: [*]const u8 = d + 1;
   
 # 라이브러리
 - [Awesome Zig](https://github.com/nrdmn/awesome-zig )  
+- [(일어) Zig의 TensorFlow Lite 라이브러리를 만들었다](https://zenn.dev/mattn/articles/af64c6a3eefad0 )
     
 ## 네트워크  
 - [pike](https://github.com/lithdew/pike ). 비동기 I/O 라이브러리    
