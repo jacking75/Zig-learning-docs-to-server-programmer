@@ -159,6 +159,7 @@ const d3: [*]const u8 = d + 1;
 - [(일어) Zig에 대해서](https://zenn.dev/hnakamur/books/memo-about-zig )
 - [(일어) 대략적으로 Zig 소개](https://zenn.dev/hastur/articles/bacbe2af2c5807)
 - [(일어) 문법 정리](https://qiita.com/bellbind/items/f2338fa1d82a2a79f290 )
+- [exercises](https://github.com/ratfactor/ziglings/tree/main/exercises )
 - [(일어) Zig 언어의 산술연산자](https://zenn.dev/yohhoy/articles/zig-exotic-arithops )  
 - [(일어) Zig 표준 라이브러리에서 준비되어 있는 컬렉션 타입을 정리](https://zenn.dev/magurotuna/articles/zig-std-collections )
   
