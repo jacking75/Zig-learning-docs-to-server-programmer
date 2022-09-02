@@ -182,6 +182,7 @@ const d3: [*]const u8 = d + 1;
     
     
 # Build 
+- [Zig는 CMake의 대안이 될 것인가?](https://docs.google.com/document/d/e/2PACX-1vToY39cQaruHJaT43qCC9pTJk_szsFsaPG3FJusj8FpsY188ZWYPJtAdM-4bB-ten9jN9aBt547AkvZ/pub )
 - [zig build explained - part 1](https://zig.news/xq/zig-build-explained-part-1-59lf )
 - [zig build explained - part 2](https://zig.news/xq/zig-build-explained-part-2-1850 )
 - [zig build explained - part 3](https://zig.news/xq/zig-build-explained-part-3-1ima )  
@@ -190,6 +191,7 @@ const d3: [*]const u8 = d + 1;
 # 라이브러리
 - [Awesome Zig](https://github.com/nrdmn/awesome-zig )  
 - [(일어) Zig의 TensorFlow Lite 라이브러리를 만들었다](https://zenn.dev/mattn/articles/af64c6a3eefad0 )
+- [(일어) Zig의 OpenCV 라이브러리 「zigcv」을 만들고 있다](https://zenn.dev/ryoppippi/articles/a368496c19a160 )
     
 ## 네트워크  
 - [pike](https://github.com/lithdew/pike ). 비동기 I/O 라이브러리    
