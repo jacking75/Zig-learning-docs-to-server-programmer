@@ -182,6 +182,13 @@ const d3: [*]const u8 = d + 1;
 - [(일어) zig으로 OpenGL 그리고 wasm](https://qiita.com/ousttrue/items/4802b61ba340dd7d89f3 )
     
     
+# 네트워크 프로그래밍
+- [(일어) Zig로 UDP 통신을 하는 샘플 프로그램](https://zenn.dev/tetsu_koba/articles/4840401763bed3 )
+- [(일어) Zig로 TCP 통신을 하는 샘플 프로그램](https://zenn.dev/tetsu_koba/articles/ed68ef22d2af4c )
+- [(일어) Zig로 Linux의 epoll과 signalfd 시스템 콜을 사용하는 샘플 프로그램](https://zenn.dev/tetsu_koba/articles/7fb5e7d13479ba )
+  
+
+  
 # Build 
 - [Zig는 CMake의 대안이 될 것인가?](https://docs.google.com/document/d/e/2PACX-1vToY39cQaruHJaT43qCC9pTJk_szsFsaPG3FJusj8FpsY188ZWYPJtAdM-4bB-ten9jN9aBt547AkvZ/pub )
 - [(일어) zig을 make 대신에 사용할 때의 첫걸음](https://qiita.com/tonluqclml/items/1724ac070f37c5c0948d )
